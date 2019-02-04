@@ -1,0 +1,25 @@
+
+In this challenge, you are tasked helping a small, rurual town modernize its vote-counting process.  (up until now, Uncle Cleetus had been trustfully tallying them one by one but unfortunately his concentration isn't what it used to be).
+
+You will be given a set of poll data called election_data.csv.  the dataset is composed of 3 columns:  voter id, county, and candidate.  Your task is to create a Python script that analyzes the votes and calculates each of the following:
+
+   -The total number of votes cast
+   -complete list of candidates who received votes
+   -percentage of votes each candidate won
+   -total number of votes each candidate won
+   -winner of the election based on popular vote
+
+as an example, your analysis should look similar to the one below:
+   Election Results
+   -------------------------
+TGotal Votes:    3135123
+   ---------------------------
+   Kahn:   54%  (23143)
+   Kahn2:   53%  (231431)
+   Kahn3:   51%  (23143)
+   ---------------------------
+Winner:  Khan
+   ---------------------------
+
+
+   -in addition, final script should print the analysis to teh terminal and export a text file with the results
