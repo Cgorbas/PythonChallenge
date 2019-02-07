@@ -5,7 +5,7 @@ In this challenge, you are tasked with creating a Python script for analyzing th
 your task is to create a Python script that analyzes the records to calculate each of the following:
    -The total number of months included in the dataset
    -The net total amount of Profit/Losses over the entire period
-   -The average of the changegs in Profit/Losses over the entire period
+   -The average of the changes in Profit/Losses over the entire period
    -The greatest increase in profits (date and amt) over the entire period
    -The greatest decrease in losses (date and amount) over the entire period
 
@@ -19,3 +19,5 @@ as an example, your analysis should look similar to the one below:
    Greatest decrease in profits:  feb   ($-131423)
 
    -in addition, final script should print the analysis to teh terminal and export a text file with the results
+   import os
+   import csv

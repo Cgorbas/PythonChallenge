@@ -23,3 +23,10 @@ Winner:  Khan
 
 
    -in addition, final script should print the analysis to teh terminal and export a text file with the results
+   
+   ~~~~~~
+   read the file
+   create dictionary
+      sort the data \
+      find the unique name
+      append to directory the uniq
