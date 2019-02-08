@@ -1,62 +1,11 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 19,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#Pybank challenge\n",
-    "#\n",
-    "# importing os and csv dictionaries\n",
-    "#\n",
-    "import os\n",
-    "import csv"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 20,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#Initializing Variables\n",
-    "votesCastTotal = 0\n",
-    "ctRows = 0"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 28,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Header: Voter ID,County,Candidate\n",
-      "\n"
-     ]
-    },
-    {
-     "ename": "AttributeError",
-     "evalue": "'set' object has no attribute 'get'",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
-      "\u001b[1;32m<ipython-input-28-b951cc5b3da1>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m()\u001b[0m\n\u001b[0;32m     16\u001b[0m         \u001b[0mpypoll_data\u001b[0m \u001b[1;33m=\u001b[0m \u001b[1;33m{\u001b[0m\u001b[0mrow\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m2\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m,\u001b[0m\u001b[0mrow\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m0\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m,\u001b[0m\u001b[0mrow\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m1\u001b[0m\u001b[1;33m]\u001b[0m \u001b[1;33m}\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     17\u001b[0m \u001b[1;31m#remove after testing\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m---> 18\u001b[1;33m         \u001b[0mprint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\"column 1: \"\u001b[0m \u001b[1;33m+\u001b[0m \u001b[0mpypoll_data\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mget\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;36m0\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m     19\u001b[0m         \u001b[0mprint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\"column 2: \"\u001b[0m \u001b[1;33m+\u001b[0m \u001b[0mstr\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mpypoll_data\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mget\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;36m1\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     20\u001b[0m         \u001b[0mprint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\"column 3: \"\u001b[0m \u001b[1;33m+\u001b[0m \u001b[0mpypoll_data\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m2\u001b[0m\u001b[1;33m]\u001b[0m \u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;31mAttributeError\u001b[0m: 'set' object has no attribute 'get'"
-     ]
-    }
-   ],
-   "source": [
-    "#set of poll data called election_data.csv.  the dataset is composed of 3 columns:  Voter ID0,County1,Candidate2.\n",
-    "#selects file in Resources folder\n",
-    "#pypoll_csv = os.path.join(\"..\", \"Resources\", \"election_data.csv\")\n",
-    "pypoll_csv = os.path.join(\"..\", \"Resources\", \"test_election_data.csv\")\n",
-    "pypoll_data = {}\n",
-    "# Open and read csv\n",
+import os
+import csv
+#set of poll data called election_data.csv.  the dataset is composed of 3 columns:  Voter ID0,County1,Candidate2.\n",
+#selects file in Resources folder\n",
+#pypoll_csv = os.path.join(\"..\", \"Resources\", \"election_data.csv\")\n",
+pypoll_csv = os.path.join("..", "Resources", "test_election_data.csv")
+pypoll_data = {}
+# Open and read csv\n",
     "with open(pypoll_csv, newline=\"\") as csvfile:\n",
     "\n",
     "    pypollreader = csv.reader(csvfile, delimiter=\",\")\n",
@@ -206,28 +155,3 @@
     "PyPoll_data.write(\"Greatest decrease in profits:  \" + minMon[0:3]  + \"  ($\"+ str(minAmt) + \")\\n\" )\n",
     " \n",
     "PyPoll_data.close()"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python [conda env:root]",
-   "language": "python",
-   "name": "conda-root-py"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.7.0"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 2
-}
